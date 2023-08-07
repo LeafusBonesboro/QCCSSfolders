@@ -1,0 +1,77 @@
+.header {
+  background-image: url("../media/QCCSS.PNG");
+  padding: 340px;
+  background-color: #c3b2b2;
+
+}
+
+
+body  {background-color: grey;}
+
+.button {
+  background-color: #4CAF50;
+  border: none;
+  color: rgb(125, 45, 45);
+  padding: 120px 120px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+/* Custom styles for the accordion */
+
+
+.accordion-horizontal {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Adjust the number of columns as needed */
+    gap: 10px; /* Add spacing between accordion items */
+}
+
+.card {
+  border: 1px solid #262d38;
+  border-radius: 5px;
+}
+
+/* Style the card headers */
+.card-header {
+  background-color: #504646;
+  border: none;
+  padding: 10px;
+  cursor: pointer; /* Add a cursor pointer to indicate interactivity */
+}
+
+
+
+/* Style the button in the card headers */
+.btn-link {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Style the button when it's in focus */
+.btn-link:focus {
+  outline: none;
+  box-shadow: none;
+  color: pink;
+}
+
+/* Style the card bodies */
+.card-body {
+  padding: 20px;
+  display: none; /* Hide the card body by default */
+}
+
+/* Show the card body when its header is clicked */
+.card-header.active + .card-body {
+  display: block;
+  color: darkblue;
+}
+
+/* Adjust the grid layout for card bodies to make them span across all columns */
+.card-body {
+  grid-column: 1 / -1;
+}
