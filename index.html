@@ -9,7 +9,15 @@
 
 <body>
 
-    <div class="header"></div>
+    <div class="header">
+        <ul class="header-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#log"></a>Log In</li>
+            <li><a href="#contact"></a>Contact</li>
+        </ul>
+    </div>
 
     <div class="accordion-horizontal" id="accordionExample">
         <div class="card">
@@ -56,13 +64,54 @@
           </div>
         </div>
       </div>
+      
+      <div id="home" class="section">
+      <h1>About us</h1>
+      <p>Queen Charlotte Chop Shop Sandwiches provides the perfect combination of quality and taste in a food truck. Customize your very own special sandwich by choosing from a long list of meats like honey maple turkey, Buffalo chicken, or London broil roast beef,
+           as well as your favorite choice of cheese. Each sandwich is served with lettuce, tomatoes, mayonnaise or mustard, with your choice of a hero or kaiser roll. Looking for extra ingredients? They got you covered with plenty of extras to choose from. Book 
+           Queen Charlotte Chop Shop sandwiches today to build your perfect sandwich!</p>
+        </div>
+      <title>Login Form</title>
+      <script>
+          function validateForm() {
+              var username = document.forms["loginForm"]["username"].value;
+              var password = document.forms["loginForm"]["password"].value;
+  
+              if (username === "" || password === "") {
+                  alert("Both fields are required.");
+                  return false;
+              }
+              return true;
+          }
+      </script>
+  </head>
+  <body>
+
+    <div class="login-form">
+      <h2>Login Form</h2>
+      <form name="loginForm" action="server-side-login-handler.php" onsubmit="return validateForm()" method="post">
+          <label for="username">Username:</label>
+          <input type="text" id="username" name="username" required><br><br>
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" required><br><br>
+          <input type="submit" value="Login">
+      </form>
+   </div>
 
 
-   
-
-<h1>About us</h1>
-<p>Queen Charlotte Chop Shop Sandwiches provides the perfect combination of quality and taste in a food truck. Customize your very own special sandwich by choosing from a long list of meats like honey maple turkey, Buffalo chicken, or London broil roast beef, as well as your favorite choice of cheese. Each sandwich is served with lettuce, tomatoes, mayonnaise or mustard, with your choice of a hero or kaiser roll. Looking for extra ingredients? They got you covered with plenty of extras to choose from. Book Queen Charlotte Chop Shop sandwiches today to build your perfect sandwich!</p>
-
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+   <script>
+       $(document).ready(function() {
+           // Smooth scrolling for navigation links
+           $('.header-links a').on('click', function(e) {
+               e.preventDefault();
+               var target = $(this).attr('href');
+               $('html, body').animate({
+                   scrollTop: $(target).offset().top
+               }, 800); // Adjust the scroll duration as needed
+           });
+       });
+   </script>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
